@@ -7,10 +7,15 @@
 	    body {
 	      	background-color: #EDA8B9;
 	      	font-family: Courier, Serif;
-			font-size: 24px;
+			font-size: 20px;
 			color: #665357;
 	    }
 		.wrapper { margin-left: 20px; }
+		.header { margin-bottom: 40px;}
+		.header h2 {
+			margin-top:0;
+			margin-bottom:0;
+		}
 		a:hover { color: #E01B4C; }
 	    h1 { 
 			font-size: 70px; 
@@ -18,52 +23,57 @@
 			margin-bottom: 0;
 		}
 	    h2 { 
-			font-size: 36px; 
+			font-size: 30px; 
 			font-family: Courier, Serif;
-			margin-bottom:0;
 		}
-		ul {list-style: none;}
+		.whisky { color: #665357;}
+		ul { 
+			list-style: none;
+			margin: 0;
+		}
 	    li { font-size: 24px; }
-		p {margin: 0;}
+		p { margin: 0;}
 	    a { color: #000000; text-decoration: none; padding: 0; margin:O;}
 	  </style>
 	</head>
 
   <body>
 	<div class='wrapper'>
-	<h1>Rachel Myers</h1>
-	<h2>rubyist and whisky drinker</h2>
-    <a href="http://twitter.com/rachelmyers">@rachelmyers</a>|<a href="http://github.com/rachelmyers">github</a>|<a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#114;&#97;&#99;&#104;&#101;&#108;&#109;&#97;&#114;&#105;&#101;&#109;&#121;&#101;&#114;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#114;&#97;&#99;&#104;&#101;&#108;&#109;&#97;&#114;&#105;&#101;&#109;&#121;&#101;&#114;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
-	<h2>projects</h2>
+	<div class='header'>
+		<h1>Rachel Myers</h1>
+		<h2>rubyist and <a class="whisky" href="http://www.flickr.com/search/?q=barrels+of+scotch&z=t">whisky</a> drinker</h2>
+    	<a href="http://twitter.com/rachelmyers">@rachelmyers</a>|<a href="http://github.com/rachelmyers">github</a>|<a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#114;&#97;&#99;&#104;&#101;&#108;&#109;&#97;&#114;&#105;&#101;&#109;&#121;&#101;&#114;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#114;&#97;&#99;&#104;&#101;&#108;&#109;&#97;&#114;&#105;&#101;&#109;&#121;&#101;&#114;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
+		</div>
+		<h2>projects</h2>
 		<ul>
-			<li>
+			<!-- <li>
 				<a href="/radiant-extension">
 					<h2>radiant extension</h2>
-					<p>extension to radiant cms with custom radius tags for linear navigation (next-step, previous-step).</p>
+					<p>extension to radiant cms with custom radius tags for linear navigation (next-step, previous-step)</p>
 				</a>
-			</li>
+			</li> -->
+			<!-- <li>
+							<a href="/styrofoam-gem">
+								<h2>styrofoam gem</h2>
+								<p>travelocity for shipping; library using the apis of major shipping companies to calculate options and prices</p>
+							</a>
+						</li> -->
 			<li>
-				<a href="/styrofoam-gem">
-					<h2>styrofoam gem</h2>
-					<p>library giving ruby devs access to the apis of major shipping companies.</p>
-				</a>
-			</li>
-			<li>
-				<a href="/tweet-command">
+				<a href="https://github.com/rachelmyers/tweet-command">
 					<h2>tweet command</h2>
-					<p>command line tweet tool shortens urls either using a domain-specific short url or bit.ly and pastes the result in a new twitter window.</p>
+					<p>command line tweet tool shortens urls either using a domain-specific short url or bit.ly and pastes the result in a new twitter window</p>
 				</a>
 			</li>
 			<li>
 				<a href="/pair">
-					<h2>pair and unpair scripts</h2>
-					<p>apple scripts to run before and after pairing</p>
+					<h2>pair script</h2>
+					<p>apple script to close, minimize or pause things i don't need while pairing; in case other people pair</p>
 				</a>
 			</li>
 			<li>
-				<a href="/tuxedo">
+				<a href="https://github.com/blazingcloud/tuxedo">
 					<h2>tuxedo</h2>
-					<p>radiant-powered demo site; made to teach radiant.</p>
+					<p>radiant-powered demo site; made to teach radiant</p>
 				</a>
 			</li>
 		</ul>
@@ -72,38 +82,36 @@
 
 		<ul>
 			<li>
-				<a href="/sicp">
+				<a href="http://mitpress.mit.edu/sicp/full-text/book/book.html">
 					<h2>sicp</h2>
-					<p>weekly study group working through <em>the structure and interpretation of computer programs</em> by harold abelson, gerald jay sussman, julie sussman.  it's awesome, you should join us.</p>
+					<p>weekly study group working through <em>the structure and interpretation of computer programs</em> by harold abelson, gerald jay sussman, julie sussman.  it's hard but it's awesome, you should join us.</p>
 				</a>
 			</li>
 			<li>
 				<a href="/ruby-group">
 					<h2>ruby group</h2>
-					<p>group of &#60;10 rubyists of various experience that read, create, solve and demo projects together. formed out of a blazing cloud class.  awesome, but you can't come; we're full.</p>
+					<p>group of &#60;10 rubyists of various experience that read, create, solve and demo projects together. formed out of a blazing cloud class.</p>
 				</a>
 			</li>
 			<li>
-				<a href="/design-patterns">
+				<a href="https://github.com/DanS/Ruby-Design-Patterns-Group">
 					<h2>ruby design patterns</h2>
 					<p>2009 study group organized by liah hansen that read and created projects with <em>design patterns in ruby</em> by russ olsen. supplemented by <em>the gang of four</em> when i couldn't figure out what olsen was trying to say.</p>
 				</a>
 			</li>
-			<li>
+			<!-- <li>
 				<a href="/javascript">
 					<h2>javascript</h2>
 					<p>three women around a kitchen table giggling and making cool javascript projects.  it's over now or i'd invite you.</p>
 				</a>
-			</li>
-			<li>
+			</li> -->
+			<!-- <li>
 				<a href="/study/git"a>
 					<h2>git</h2>
-					<p>actually two groups: first, 30 people from the sfruby meetup group met at blazing cloud to learn about the porcelain.  later, i learned about the plumbing by working through some great materials put together by my bf.'</p>
+					<p>learned by bugging my boyfriend and reading a book.</p>
 				</a>
-			</li>
+			</li> -->
 		</ul>
-
-		<br style="clear:both;"/>
 	
 	<a href="/">
 		<h1 style= "font-size:100px; margin: 0;">&#171;</h1>
