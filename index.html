@@ -2,120 +2,132 @@
 <html>
 	<head>
 	  <title> Rachel Myers </title>
-	  <link href="/style.css" rel="stylesheet" type="text/css" />
+	  
 	  <style>
 	    body {
-	      	background-color: #EDA8B9;
-	      	font-family: Courier, Serif;
-			font-size: 20px;
-			color: #665357;
-	    }
-		.wrapper { margin-left: 20px; }
-		.header { margin-bottom: 40px;}
-		.header h2 {
-			margin-top:0;
-			margin-bottom:0;
-		}
-		a:hover { color: #E01B4C; }
-	    h1 { 
-			font-size: 70px; 
-			font-family: Courier, Serif;
-			margin-bottom: 0;
-		}
-	    h2 { 
-			font-size: 30px; 
-			font-family: Courier, Serif;
-		}
-		.whisky { color: #665357;}
-		ul { 
-			list-style: none;
-			margin: 0;
-		}
-	    li { font-size: 24px; }
-		p { margin: 0;}
-	    a { color: #000000; text-decoration: none; padding: 0; margin:O;}
+        background: url("https://www.dropbox.com/s/m574osr9y4h3ldz/rain.jpg") no-repeat;
+        font-family: Arial;
+        color: #081272;
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 50px;
+      }
+      h1{
+        color: #FFC740;
+        margin-bottom: 0;
+      }
+      h2{
+        font-size: 18px;
+        line-height: 20px;
+        padding: 0;
+        margin: 0;
+      }
+      h2.title{
+        margin-top:7px;
+      }
+      .title a{
+        color: #081272;
+      }
+      
+      h2.extras{
+        margin-top: 7px;
+      }
+      .projects{
+        margin-left: 15px;
+      }
+      h4, ul, p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 18px;
+      }
+      .details, p{
+        color: #000080;
+      }
+      .wishihadadesigner{
+        margin-left: 20px;
+      }
+      a{
+        color: #FFC740;
+        margin: 5px;
+        text-decoration:none;
+      }
+      a:hover{
+        color:#FF2800;
+        text-decoration:none;
+      }
 	  </style>
 	</head>
 
   <body>
-	<div class='wrapper'>
-	<div class='header'>
 		<h1>Rachel Myers</h1>
-		<h2>rubyist and <a class="whisky" href="http://www.flickr.com/search/?q=barrels+of+scotch&z=t">whisky</a> drinker</h2>
-    	<a href="http://twitter.com/rachelmyers">@rachelmyers</a>|<a href="http://github.com/rachelmyers">github</a>|<a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#114;&#97;&#99;&#104;&#101;&#108;&#109;&#97;&#114;&#105;&#101;&#109;&#121;&#101;&#114;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#114;&#97;&#99;&#104;&#101;&#108;&#109;&#97;&#114;&#105;&#101;&#109;&#121;&#101;&#114;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
-		</div>
-		<h2>projects</h2>
-		<ul>
-			<!-- <li>
-				<a href="/radiant-extension">
-					<h2>radiant extension</h2>
-					<p>extension to radiant cms with custom radius tags for linear navigation (next-step, previous-step)</p>
-				</a>
-			</li> -->
-			<!-- <li>
-							<a href="/styrofoam-gem">
-								<h2>styrofoam gem</h2>
-								<p>travelocity for shipping; library using the apis of major shipping companies to calculate options and prices</p>
-							</a>
-						</li> -->
-			<li>
-				<a href="https://github.com/rachelmyers/tweet-command">
-					<h2>tweet command</h2>
-					<p>command line tweet tool shortens urls either using a domain-specific short url or bit.ly and pastes the result in a new twitter window</p>
-				</a>
-			</li>
-			<li>
-				<a href="/pair">
-					<h2>pair script</h2>
-					<p>apple script to close, minimize or pause things i don't need while pairing; in case other people pair</p>
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/blazingcloud/tuxedo">
-					<h2>tuxedo</h2>
-					<p>radiant-powered demo site; made to teach radiant</p>
-				</a>
-			</li>
-		</ul>
+		<h2>rubyist and whisky drinker<h2>
+    <a href="http://twitter.com/rachelmyers">@rachelmyers</a>|<a href="http://github.com/rachelmyers">github</a>|<a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#114;&#97;&#99;&#104;&#101;&#108;&#109;&#97;&#114;&#105;&#101;&#109;&#121;&#101;&#114;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#114;&#97;&#99;&#104;&#101;&#108;&#109;&#97;&#114;&#105;&#101;&#109;&#121;&#101;&#114;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
+    <h2 class="title">Software Engineer, <a href='http://modcloth.com' target="blank">ModCloth</a></h2>
+    <h2 class="date"> March 2011 - Present (started as Associate Engineer)</h2>
+      <div class="projects">
+        <h4>Designed and built several pieces of a service-oriented architecture, including Be The Buyer and Comments Service.</h4>
+        <div class="soa">
+          <h4>A 'Be the Buyer' voting app was the first customer-facing app developed independently of the main rails app: </h4>
+          <ul class="details">
+            <li> For a smooth user experience, all customer-facing app share sessions and sign in logic.</li>
+            <li> We collaborated with design to build the app responsively; the same views are work on all device resolutions and screen sizes.</li>
+            <li>All common logic and assets needed across apps are encapsulated in private gems that can be included anywhere; for example, admin user authentication and fetching product images at the right sizse and resolution.</li>
+            <li>We siloed the admin tools in an engine that is currently mounted in the customer facing app, but can easily be separated. Modularity was the rule.</li>
+            <li> For internal reporting we migrated data from the highly coupled models of the large app to a few small, modular models. </li>
+          </ul>
+          <h4>Comments Service, a backend service auto moderating comments throughout the site:</h4>
+          <ul class="details">
+            <li>History of human moderations trained a baysian filter (Anakusa gem) that estimates a comment's similarity to good or bad comments.</li>
+            <li>Built to only know or care about comments so it can be consumed widely (sample comments, community posts, and product reviews)</li>
+            <li>Again, for internal reporting, we migrated data from confusing, coupled models to a simple, straightforward models.</li>
+          </ul>
+        </div>
+        <h4>Backbone-based mobile web:</h4>
+        <ul class="details">
+          <li> To provide a better experience on phones, we built backbone models and views on top of Rails routes, controllers and models. </li>
+        </ul>
+        <h4>Solr-based categories:</h4> 
+        <ul class="details">
+          <li>The presentation-layer product categories became indexed solr queries based on product properties.</li>
+          <li>We additionally created a parsing tool to let merchandising create new categories quickly.</li>
+          <li>Solr-based categories were the technical down payment for filter-based shopping; filters somewhat simply added parameters to the search query.</li>
+          <li>We created a middleware rack app to quickly redirect old urls (way faster than rails).</li>
+        </ul>
+        <h4>Password security:</h4>
+        <ul class="details">
+          <li>As a hack day project I created a system to encrypt user passwords more securely, and became the local password security curmudgeon.</li>
+        </ul>
+        <h4>Just for fun:</h4>
+        <ul class="details">
+          <li>CFO (Chief Fun Officer) of Mobile Web and SOA teams</li>
+        </ul>
+      </div>
+    <h2 class="title">Rails Intern, <a href='http://blazingcloud.net/' target='blank'>Blazing Cloud</a> (a Rails and mobile consulting company)</h2>
+    <h2 class="date">August 2010 - March 2011</h2>
+    <ul class="details">
+      <li>Created a product catalog site using Radiant CMS as the admin tool. Later created curriculum for a class on how to customize a CMS.</li>
+    </ul>
+        
+    <h2 class="extras">Extra-Curriculars:</h2>
+    <ul class="details">
+      <li>Core team of RailsBridge: I manage the Outreach to Women Workshops (2010 - present)</li>
+      <li>Golden Gate Ruby Conference team: a volunteer since GoGaRuCo 2010.</li>
+      <li>Women Who Code: mentor, technical lightning talker.</li>
+        <p>Fave Lightning Talk: 'SOA is for suckers.'</p>
+    </ul>
+    <h2 class="extras">Favorite Things:</h2>
+    <div class="wishihadadesigner">
+      <p>devise, braintree, active_admin, capistrano,</p>
+      <p>capybara, factory girl, rspec, mocha, </p>
+      <p>haml, scss, compass, </p>
+      <p>foreman, ruby motion, </p>
+      <p>that in rails 3 migrations begining with 'add' create 'def change' instead of 'def up' </p>
+    </div>
 
-		<h2>study groups</h2>
-
-		<ul>
-			<li>
-				<a href="http://mitpress.mit.edu/sicp/full-text/book/book.html">
-					<h2>sicp</h2>
-					<p>weekly study group working through <em>the structure and interpretation of computer programs</em> by harold abelson, gerald jay sussman, julie sussman.  it's hard but it's awesome, you should join us.</p>
-				</a>
-			</li>
-			<li>
-				<a href="/ruby-group">
-					<h2>ruby group</h2>
-					<p>group of &#60;10 rubyists of various experience that read, create, solve and demo projects together. formed out of a blazing cloud class.</p>
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/DanS/Ruby-Design-Patterns-Group">
-					<h2>ruby design patterns</h2>
-					<p>2009 study group organized by liah hansen that read and created projects with <em>design patterns in ruby</em> by russ olsen. supplemented by <em>the gang of four</em> when i couldn't figure out what olsen was trying to say.</p>
-				</a>
-			</li>
-			<!-- <li>
-				<a href="/javascript">
-					<h2>javascript</h2>
-					<p>three women around a kitchen table giggling and making cool javascript projects.  it's over now or i'd invite you.</p>
-				</a>
-			</li> -->
-			<!-- <li>
-				<a href="/study/git"a>
-					<h2>git</h2>
-					<p>learned by bugging my boyfriend and reading a book.</p>
-				</a>
-			</li> -->
-		</ul>
-	
-	<a href="/">
-		<h1 style= "font-size:100px; margin: 0;">&#171;</h1>
-	</a>
-	</div>
+    <h2 class="extras">Education:</h2>
+    <div class="wishihadadesigner">
+    <p>MA and BA in Philosophy</p>
+    </div>
+    
  </body>
 </html>
