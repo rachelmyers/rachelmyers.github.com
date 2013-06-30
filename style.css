@@ -1,0 +1,83 @@
+body{
+  margin: 0;
+  background-color: #F3F3F3;
+  font: 15px/18px 'inconsolata';
+}
+
+header{
+  max-width: 1000px;
+  margin: 0 auto 50px auto;
+}
+
+section{
+  display: block;
+  max-width: 1016px;
+  margin: 0 auto;
+  padding: 0 10px;
+  vertical-align: top;
+}
+
+a{
+  margin-left: 30px;
+  text-decoration: none;
+  color: #F0CE84;
+}
+
+img{
+  display: block;
+}
+
+div.line img{
+  height: 50px;
+  width: 500px;
+  padding: 50px;
+  margin: auto;
+}
+
+/*talks section*/
+.talks{
+  height: 350px;
+}
+
+.talks div{
+  display: inline-block;
+  width: 240px;
+  vertical-align: top;
+}
+.talks div a{
+  display: block;
+  margin: 0;
+}
+.talks div p{
+  padding: 0;
+  width: 220px;
+  text-align: center;
+}
+img.still{
+  width: 200px;
+  margin: 0px auto;
+}
+
+/*contact and gig sections*/
+
+section.contact, section.gigs{
+  height: 250px;
+}
+
+section a img{
+  display: inline;
+  vertical-align: top;
+  max-width: 200px;
+}
+
+section a img.long{
+  max-width: 400px;
+}
+
+footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  height:145px;
+  margin-top: 40px;
+  background-image: url('images/banana.png');
+}

@@ -1,134 +1,92 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-	  <title> Rachel Myers </title>
-	  
-	  <style>
-	    body {
-        background: url("https://www.dropbox.com/s/m574osr9y4h3ldz/rain.jpg") no-repeat;
-        font-family: Arial;
-        color: #081272;
-        width: 80%;
-        margin: 0 auto;
-        padding-bottom: 50px;
-      }
-      h1{
-        color: #FFC740;
-        margin-bottom: 0;
-      }
-      h2{
-        font-size: 18px;
-        line-height: 20px;
-        padding: 0;
-        margin: 0;
-      }
-      h2.title{
-        margin-top:7px;
-      }
-      .title a{
-        color: #081272;
-      }
-      
-      h2.extras{
-        margin-top: 7px;
-      }
-      .projects{
-        margin-left: 15px;
-      }
-      h4, ul, p {
-        margin: 0;
-        font-size: 14px;
-        line-height: 18px;
-      }
-      .details, p{
-        color: #000080;
-      }
-      .wishihadadesigner{
-        margin-left: 20px;
-      }
-      a{
-        color: #FFC740;
-        margin: 5px;
-        text-decoration:none;
-      }
-      a:hover{
-        color:#FF2800;
-        text-decoration:none;
-      }
-	  </style>
-	</head>
+  <head>
+	<title> Rachel Myers </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+  </head>
 
   <body>
-		<h1>Rachel Myers</h1>
-		<h2>rubyist and whisky drinker<h2>
-    <a href="http://twitter.com/rachelmyers">@rachelmyers</a>|<a href="http://github.com/rachelmyers">github</a>|<a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#114;&#97;&#99;&#104;&#101;&#108;&#109;&#97;&#114;&#105;&#101;&#109;&#121;&#101;&#114;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#114;&#97;&#99;&#104;&#101;&#108;&#109;&#97;&#114;&#105;&#101;&#109;&#121;&#101;&#114;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
-    <h2 class="title"><a href='http://modcloth.com' target="blank">ModCloth</a>, March 2011 - Present</h2>
-    <!-- <h2 class="date"> March 2011 - Present </h2> -->
-      <div class="projects">
-        <h4>Designed and built several pieces of a service-oriented architecture, including ModCloth's Be The Buyer and Comments Service apps.</h4>
-        <div class="soa">
-          <h4>A 'Be the Buyer' voting app was the first customer-facing app developed independently of the main rails app: </h4>
-          <ul class="details">
-            <li> For a smooth user experience, all customer-facing app share sessions and sign in logic.</li>
-            <li> We collaborated with design to build the app responsively; the same views are work on all device resolutions and screen sizes.</li>
-            <li>All common logic and assets needed across apps are encapsulated in private gems that can be included anywhere; for example, admin user authentication and fetching product images at the right sizse and resolution.</li>
-            <li>We siloed the admin tools in an engine that is currently mounted in the customer facing app, but can easily be separated. Modularity was the rule.</li>
-            <li> For internal reporting we migrated data from the highly coupled models of the large app to a few small, modular models. </li>
-          </ul>
-          <h4>Comments Service, a backend service auto moderating comments throughout the site:</h4>
-          <ul class="details">
-            <li>History of human moderations trained a baysian filter (Anakusa gem) that estimates a comment's similarity to good or bad comments.</li>
-            <li>Built to only know or care about comments so it can be consumed widely (sample comments, community posts, and product reviews)</li>
-            <li>Again, for internal reporting, we migrated data from confusing, coupled models to a simple, straightforward models.</li>
-          </ul>
-        </div>
-        <h4>Backbone-based mobile web:</h4>
-        <ul class="details">
-          <li> To provide a better experience on phones, we built backbone models and views on top of Rails routes, controllers and models. </li>
-        </ul>
-        <h4>Solr-based categories:</h4> 
-        <ul class="details">
-          <li>The presentation-layer product categories became indexed solr queries based on product properties.</li>
-          <li>We additionally created a parsing tool to let merchandising create new categories quickly.</li>
-          <li>Solr-based categories were the technical down payment for filter-based shopping; filters somewhat simply added parameters to the search query.</li>
-          <li>We created a middleware rack app to quickly redirect old urls (way faster than rails).</li>
-        </ul>
-        <h4>Password security:</h4>
-        <ul class="details">
-          <li>As a hack day project I created a system to encrypt user passwords more securely, and became the local password security curmudgeon.</li>
-        </ul>
-        <h4>Just for fun:</h4>
-        <ul class="details">
-          <li>CFO (Chief Fun Officer) of Mobile Web and SOA teams</li>
-        </ul>
-      </div>
-    <h2 class="title"><a href='http://blazingcloud.net/' target='blank'>Blazing Cloud</a> (a Rails and mobile consulting company), August 2010 - March 2011</h2>
-    <!-- <h2 class="date">August 2010 - March 2011</h2> -->
-    <ul class="details">
-      <li>Interned on several small rails projects for clients and internal use. </li>
-      <li>Created a product catalog site using Radiant CMS as the admin tool. Later created curriculum for a class on how to customize a CMS.</li>
-    </ul>
+    
+    <header>
+        <img src="images/name.png"/>
+    </header>
+    
+    <section class="talks">
+        <img src="images/talks.png"/>
         
-    <h2 class="extras">Extra-Curriculars:</h2>
-    <ul class="details">
-      <li>Core team of RailsBridge: I manage the Outreach to Women Workshops (2010 - present)</li>
-      <li>Golden Gate Ruby Conference team: a volunteer since GoGaRuCo 2010.</li>
-      <li>Women Who Code: mentor, technical lightning talker.</li>
-        <p>Fave Lightning Talk: 'SOA is for suckers.'</p>
-    </ul>
-    <h2 class="extras">Favorite Things:</h2>
-    <div class="wishihadadesigner">
-      <p>devise, braintree, active_admin, capistrano,</p>
-      <p>capybara, factory girl, rspec, mocha, </p>
-      <p>haml, scss, compass, </p>
-      <p>foreman, ruby motion, </p>
-      <p>that in rails 3 migrations begining with 'add' create 'def change' instead of 'def up' </p>
+        <div>
+            <a href="http://velocityconf.com/velocity2013/public/schedule/detail/28383">
+                <img class="still" src="images/buried-ostrich.png"/>
+                <p>Velocity: Benchmarking the Front End: Expanding What Performance Means and How to Track it</p>
+            </a>
+        </div>
+        
+        <div>
+            <a href="http://fluentconf.com/fluent2013/public/schedule/detail/27996">
+                <img class="still" src="images/yak.png"/>
+                <p>Fluent: Benchmarking the New Front End: How to Quantify Single Page App Performance</p>
+            </a>
+        </div>
+        
+        <div>
+            <a href="http://programme2013.scottishrubyconference.com/slots/3/video">
+                <img class="still" src="images/plant.png"/>
+                <p>Scottish Ruby Conference Keynote: Growing Programming</p>
+            </a>
+        </div>
+        
+        <div>
+            <a href="http://www.youtube.com/watch?v=rMYUGwQGLn8">
+                <img class="still" src="images/starfish.png"/>
+                <p>Passion Projects</p>
+            </a>
+        </div>
+    </section>
+
+    <div class="line">
+        <img src="images/line1.png"/>
     </div>
 
-    <h2 class="extras">Education:</h2>
-    <div class="wishihadadesigner">
-    <p>MA and BA in Philosophy</p>
+    <section class="gigs">
+        <!-- gigs -->
+        <img src="images/gigs.png"/>
+        <a href="http://workshops.railsbridge.org/">
+            <img src="images/railsbridge.png">
+        </a>
+        
+        <a href="https://github.com">
+            <img src="images/github.png"/>
+        </a>
+        <a href="http://modcloth.com">
+            <img src="images/modcloth.png"/>
+        </a>
+        <a href="http://blazingcloud.net/">
+            <img src="images/blazing-cloud.png"/>
+        </a>
+    </section>
+    
+    <div class="line">
+        <img src="images/line2.png"/>
     </div>
     
+    <section class="contact">
+        <!-- contact -->
+        <img src="images/contact.png"/>
+    
+        <a href="http://twitter.com/rachelmyers">
+            <img src="images/twitter.png"/>
+        </a>
+    
+        <a href="http://github.com/rachelmyers">
+            <img src="images/github-contact.png"/>
+        </a>
+        <a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#114;&#97;&#99;&#104;&#101;&#108;&#109;&#97;&#114;&#105;&#101;&#109;&#121;&#101;&#114;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">
+            <img class="long" src="images/email.png"/>
+        </a>
+    </section>
+    
+    <footer>
+    </footer>
  </body>
 </html>
