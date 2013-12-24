@@ -1,0 +1,82 @@
+body {
+  background-color: #F3F3F3;
+  margin: 0;
+}
+
+a {
+  text-decoration:none;
+  color: #555;
+}
+
+h1, h2 {
+  font: 75px 'Lobster', cursive;
+  font-size: 75px;
+  color: #555;
+}
+
+h1 {
+  padding-left: 70px;
+}
+
+.text-right { padding:3% 6% 3% 55%; }
+.text-left {
+  padding:3% 55% 3% 6%;
+}
+.text-left, .text-right{
+  color: black;
+  font: 20px/25px 'inconsolata';
+}
+
+.passion-projects {
+  background:url(images/starfish.png)fixed no-repeat;
+  background-position:50px 190px;
+}
+
+.src2013 {
+  background:url(images/plant.png) fixed no-repeat;
+  background-position:right;
+}
+
+.fluent2013 {
+  background:url(images/yak.png) fixed no-repeat;
+  background-position:left;
+}
+
+.velocity2013 {
+  background:url(images/buried-ostrich.png) fixed no-repeat;
+  background-position:right;
+}
+
+.wicked2013 {
+  background:url(images/dino.png) fixed no-repeat;
+  background-position:left;
+  background-size: 50%;
+}
+
+.railsgirls-milan {
+  background:url(images/boot.png) fixed no-repeat;
+  background-position:right;
+  background-size:50%;
+}
+
+.fluent2014 {
+  background:url(images/squirrel.png) fixed no-repeat;
+  background-position:left;
+  background-size: 50%;
+}
+
+.codemania2014 {
+  background:url(images/squirrel.png) fixed no-repeat;
+  background-position:right;
+  background-size: 50%;
+}
+
+footer {
+  max-width: 500px;
+  margin: 0 auto;
+  height:145px;
+  margin-top: 40px;
+  background-image: url('images/banana.png');
+}
+
+
