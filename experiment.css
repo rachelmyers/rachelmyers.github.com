@@ -1,5 +1,6 @@
 body {
   background-color: #F3F3F3;
+  font: 20px/25px 'inconsolata' black;
   margin: 0;
 }
 
@@ -18,23 +19,44 @@ h1 {
   padding-left: 70px;
 }
 
+header {
+  width: 100%;
+  padding: 100px 0 200px 150px;
+  border-bottom: 5px solid #555;
+}
+
+header h1{
+  font-size: 150px;
+  color: #555;
+  margin: 0
+}
+
+header a img{
+  height: 75px;
+  padding-right: 50px;
+}
+
 .text-right { padding:3% 6% 3% 55%; }
 .text-left {
   padding:3% 55% 3% 6%;
 }
 .text-left, .text-right{
-  color: black;
-  font: 20px/25px 'inconsolata';
+  border-bottom: 5px solid #555;
+}
+
+.railsbridge {
+  background:url(images/railsbridge.png) fixed no-repeat;
+  background-position: right;
 }
 
 .passion-projects {
-  background:url(images/starfish.png)fixed no-repeat;
-  background-position:50px 190px;
+  background:url(images/starfish.png) fixed no-repeat;
+  background-position: left;
 }
 
 .src2013 {
   background:url(images/plant.png) fixed no-repeat;
-  background-position:right;
+  background-position: right;
 }
 
 .fluent2013 {
@@ -73,10 +95,15 @@ h1 {
 
 footer {
   max-width: 500px;
-  margin: 0 auto;
-  height:145px;
-  margin-top: 40px;
+  margin: 40px auto 0 auto;
+  height: 145px;
   background-image: url('images/banana.png');
+}
+
+footer p{
+  position: absolute;
+  margin-top: 105px;
+  margin-left: 395px;
 }
 
 
