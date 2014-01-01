@@ -1,83 +1,135 @@
-body{
-  margin: 0;
+body {
   background-color: #F3F3F3;
-  font: 15px/18px 'inconsolata';
-}
-
-header{
-  max-width: 1000px;
-  margin: 0 auto 50px auto;
-}
-
-section{
-  display: block;
-  max-width: 1016px;
-  margin: 0 auto;
-  padding: 0 10px;
-  vertical-align: top;
-}
-
-a{
-  margin-left: 30px;
-  text-decoration: none;
-  color: #F0CE84;
-}
-
-img{
-  display: block;
-}
-
-div.line img{
-  height: 50px;
-  width: 500px;
-  padding: 50px;
-  margin: auto;
-}
-
-/*talks section*/
-.talks{
-  height: 350px;
-}
-
-.talks div{
-  display: inline-block;
-  width: 240px;
-  vertical-align: top;
-}
-.talks div a{
-  display: block;
+  font: 20px/25px 'inconsolata' black;
   margin: 0;
 }
-.talks div p{
-  padding: 0;
-  width: 220px;
-  text-align: center;
-}
-img.still{
-  width: 200px;
-  margin: 0px auto;
+
+a {
+  text-decoration:none;
+  color: #777;
 }
 
-/*contact and gig sections*/
-
-section.contact, section.gigs{
-  height: 250px;
+h1, h2 {
+  font: 75px/70px 'Lobster', cursive;
+  margin: 0;
+  color: #555;
 }
 
-section a img{
-  display: inline;
-  vertical-align: top;
-  max-width: 200px;
+header {
+  height: 425px;
+  padding: 100px 0 200px 75px;
+  border-bottom: 5px solid #555;
+  background: url(images/starmonkey.png) no-repeat;
+  background-size: 50%;
+  background-position: bottom right;
 }
 
-section a img.long{
-  max-width: 400px;
+header h1 {
+  font-size: 150px;
+  line-height: 175px;
+  margin: 0;
+}
+
+section {
+  margin: 20px 0 0 60px;
+  width: 600px;
+}
+
+section a img {
+  margin: 30px 30px 30px 0;
+}
+
+q{
+  display: block;
+  margin: 30px;
+  font: 30px/35px 'Lobster', cursive;
+  color: #555;
+}
+
+.extra-special{
+  color: #F55D71;
+}
+
+.text-right { padding:3% 6% 3% 55%; }
+.text-left {
+  padding:3% 55% 3% 6%;
+}
+.text-left, .text-right{
+  border-bottom: 5px solid #555;
+}
+
+.railsbridge {
+  background:url(images/railsbridge-img.png) fixed no-repeat;
+  background-position: right;
+  background-size: 60%;
+}
+
+.passion-projects {
+  background:url(images/starfish.png) fixed no-repeat;
+  background-position: left;
+  background-size: 60%;
+}
+
+.src2013 {
+  background:url(images/tree.png) fixed no-repeat;
+  background-position: right;
+  background-size: 50%;
+}
+
+.fluent2013 {
+  background:url(images/yak.png) fixed no-repeat;
+  background-position:left;
+  background-size: 75%;
+}
+
+.fluent2013 h2, .fluent2013 a{
+  color: #DB6C27;
+}
+ .fluent2013 p {
+  color: #F0A06E;
+}
+
+
+.velocity2013 {
+  background:url(images/buried-ostrich.png) fixed no-repeat;
+  background-position:right;
+  background-size: 40%;
+}
+
+.wicked2013 {
+  background:url(images/dino.png) fixed no-repeat;
+  background-position:left;
+  background-size: 40%;
+}
+
+.railsgirls-milan {
+  background:url(images/boot.png) fixed no-repeat;
+  background-position:right;
+  background-size:40%;
+}
+
+.fluent2014 {
+  background:url(images/squirrel.png) fixed no-repeat;
+  background-position:left;
+  background-size: 30%;
+}
+
+.codemania2014 {
+  background:url(images/starmonkey.png) fixed no-repeat;
+  background-position:right;
+  background-size: 35%;
 }
 
 footer {
   max-width: 500px;
-  margin: 0 auto;
+  margin: 40px auto 0 auto;
   height: 145px;
-  margin-top: 40px;
-  background: url(images/banana.png) no-repeat; 
+  background: url(images/banana.png) no-repeat;
 }
+
+footer p{
+  position: absolute;
+  margin-top: 105px;
+  margin-left: 250px;
+}
+
