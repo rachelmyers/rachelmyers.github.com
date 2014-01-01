@@ -77,7 +77,7 @@ section a img.long{
 footer {
   max-width: 500px;
   margin: 0 auto;
-  height:145px;
+  height: 145px;
   margin-top: 40px;
-  background-image: url('images/banana.png');
+  background: url(images/banana.png) no-repeat; 
 }

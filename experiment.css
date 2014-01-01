@@ -6,34 +6,48 @@ body {
 
 a {
   text-decoration:none;
-  color: #555;
+  color: #777;
 }
 
 h1, h2 {
-  font: 75px 'Lobster', cursive;
-  font-size: 75px;
+  font: 75px/70px 'Lobster', cursive;
+  margin: 0;
   color: #555;
-}
-
-h1 {
-  padding-left: 70px;
 }
 
 header {
-  width: 100%;
-  padding: 100px 0 200px 150px;
+  height: 375px;
+  padding: 100px 0 200px 75px;
   border-bottom: 5px solid #555;
+  background: url(images/starmonkey.png) no-repeat;
+  background-size: 50%;
+  background-position: bottom right;
 }
 
-header h1{
+header h1 {
   font-size: 150px;
-  color: #555;
-  margin: 0
+  line-height: 175px;
+  margin: 0;
 }
 
-header a img{
-  height: 75px;
-  padding-right: 50px;
+section {
+  margin: 20px 0 0 60px;
+  width: 600px;
+}
+
+section a img {
+  margin: 30px 30px 30px 0;
+}
+
+q{
+  display: block;
+  margin: 30px;
+  font: 30px/35px 'Lobster', cursive;
+  color: #555;
+}
+
+.extra-special{
+  color: #F55D71;
 }
 
 .text-right { padding:3% 6% 3% 55%; }
@@ -45,65 +59,78 @@ header a img{
 }
 
 .railsbridge {
-  background:url(images/railsbridge.png) fixed no-repeat;
+  background:url(images/railsbridge-img.png) fixed no-repeat;
   background-position: right;
+  background-size: 60%;
 }
 
 .passion-projects {
   background:url(images/starfish.png) fixed no-repeat;
   background-position: left;
+  background-size: 60%;
 }
 
 .src2013 {
-  background:url(images/plant.png) fixed no-repeat;
+  background:url(images/tree.png) fixed no-repeat;
   background-position: right;
+  background-size: 50%;
 }
 
 .fluent2013 {
   background:url(images/yak.png) fixed no-repeat;
   background-position:left;
+  background-size: 80%;
 }
+
+.fluent2013 h2, .fluent2013 a{
+  color: #DB6C27;
+}
+ .fluent2013 p {
+  color: #F0A06E;
+}
+
 
 .velocity2013 {
   background:url(images/buried-ostrich.png) fixed no-repeat;
   background-position:right;
+  background-size: 40%;
 }
 
 .wicked2013 {
   background:url(images/dino.png) fixed no-repeat;
   background-position:left;
-  background-size: 50%;
+  background-size: 40%;
 }
 
 .railsgirls-milan {
   background:url(images/boot.png) fixed no-repeat;
   background-position:right;
-  background-size:50%;
+  background-size:40%;
 }
 
 .fluent2014 {
   background:url(images/squirrel.png) fixed no-repeat;
   background-position:left;
-  background-size: 50%;
+  background-size: 40%;
 }
 
 .codemania2014 {
-  background:url(images/squirrel.png) fixed no-repeat;
+  background:url(images/starmonkey.png) fixed no-repeat;
   background-position:right;
-  background-size: 50%;
+  background-size: 35%;
 }
 
 footer {
   max-width: 500px;
   margin: 40px auto 0 auto;
   height: 145px;
-  background-image: url('images/banana.png');
+  background: url(images/banana.png) no-repeat;
 }
 
 footer p{
   position: absolute;
   margin-top: 105px;
-  margin-left: 395px;
+  margin-left: 250px;
 }
 
 
