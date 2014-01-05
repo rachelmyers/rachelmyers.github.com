@@ -11,72 +11,61 @@ h2{
 
 .ruby {
   background:url(images/ruby.png) fixed no-repeat;
-  background-position: left 100px;
+  background-position: left 100px top 250px;
 }
 
 .suit {
   background:url(images/suit.png) fixed no-repeat;
-  background-position: right;
-  background-size: 50%;
+  background-position: right 50px center;
 }
 
 .spider-bees {
   background:url(images/spider-bees.png) fixed no-repeat;
-  background-position: left;
-  background-size: 50%;
+  background-position: left 50px center;
 }
 
 .starfish {
   background:url(images/one-starfish.png) fixed no-repeat;
-  background-position: right;
-  background-size: 50%;
+  background-position: right 150px center;
 }
 
 .dead-spider {
   background:url(images/dead-spider.png) fixed no-repeat;
-  background-position: left;
-  background-size: 50%;
+  background-position: left 50px center;
 }
 
 .double-starfish {
   background:url(images/double-starfish.png) fixed no-repeat;
-  background-position: right;
-  background-size: 50%;
+  background-position: right 50px center;
 }
 
 .starbucks-hq {
   background:url(images/starbucks-hq.png) fixed no-repeat;
-  background-position: left;
-  background-size: 50%;
+  background-position: left 50px center;
 }
 
 .banana-coffee {
   background:url(images/banana-coffee.png) fixed no-repeat;
-  background-position: right;
-  background-size: 50%;
+  background-position: right 200px center;
 }
 
 .wikipedia {
   background:url(images/wikipedia.png) fixed no-repeat;
   background-position: left;
-  background-size: 50%;
 }
 
 .aa-bees {
   background:url(images/aa-bees.png) fixed no-repeat;
-  background-position: right;
-  background-size: 50%;
+  background-position: right 150px center;
 }
 
 .internet {
   background:url(images/internet.png) fixed no-repeat;
-  background-position: left;
-  background-size: 50%;
+  background-position: left 50px center;
 }
 
 .starfish-smile {
   background:url(images/starfish-smile.png) fixed no-repeat;
-  background-position: right 50px;
-  background-size: 50%;
+  background-position: right 250px bottom 200px;
 }
 
