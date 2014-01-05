@@ -24,7 +24,6 @@ header {
   padding: 100px 0 200px 75px;
   border-bottom: 5px solid #555;
   background: url(images/starmonkey.png) no-repeat;
-  background-size: 50%;
   background-position: bottom right;
 }
 
@@ -62,28 +61,19 @@ q{
   border-bottom: 5px solid #555;
 }
 
-.railsbridge {
-  background:url(images/railsbridge-img.png) fixed no-repeat;
-  background-position: right;
-  background-size: 60%;
-}
-
 .passion-projects {
   background:url(images/starfish.png) fixed no-repeat;
   background-position: left;
-  background-size: 50%;
 }
 
 .src2013 {
   background:url(images/tree.png) fixed no-repeat;
   background-position: right;
-  background-size: 50%;
 }
 
 .fluent2013 {
   background:url(images/yak.png) fixed no-repeat;
-  background-position:left;
-  background-size: 75%;
+  background-position: left 100px center;
 }
 
 .fluent2013 h2, .fluent2013 a{
@@ -97,31 +87,31 @@ q{
 .velocity2013 {
   background:url(images/buried-ostrich.png) fixed no-repeat;
   background-position:right;
-  background-size: 40%;
 }
 
 .wicked2013 {
   background:url(images/dino.png) fixed no-repeat;
   background-position:left;
-  background-size: 40%;
 }
 
 .railsgirls-milan {
   background:url(images/boot.png) fixed no-repeat;
   background-position:right;
-  background-size:40%;
 }
 
 .fluent2014 {
   background:url(images/squirrel.png) fixed no-repeat;
   background-position:left;
-  background-size: 30%;
 }
 
 .codemania2014 {
   background:url(images/starmonkey.png) fixed no-repeat;
   background-position:right;
-  background-size: 35%;
+}
+
+.railsbridge {
+  background:url(images/ruby.png) fixed no-repeat;
+  background-position: right 200px center;
 }
 
 footer {
