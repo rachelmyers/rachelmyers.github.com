@@ -6,6 +6,10 @@ body {
 
 a {
   text-decoration:none;
+  color: #066;
+}
+
+a:hover {
   color: #777;
 }
 
@@ -67,7 +71,7 @@ q{
 .passion-projects {
   background:url(images/starfish.png) fixed no-repeat;
   background-position: left;
-  background-size: 60%;
+  background-size: 50%;
 }
 
 .src2013 {

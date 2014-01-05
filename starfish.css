@@ -1,0 +1,83 @@
+h1{
+  padding: 30px 0 0 50px;
+}
+h2{
+  padding-left: 150px;
+}
+
+.text-left, .text-right{
+  border: none;
+}
+
+.book {
+  background:url(images/book.png) fixed no-repeat;
+  background-position: left;
+  background-size: 50%;
+}
+
+.suit {
+  background:url(images/suit.png) fixed no-repeat;
+  background-position: right;
+  background-size: 50%;
+}
+
+.spider-bees {
+  background:url(images/spider-bees.png) fixed no-repeat;
+  background-position: left;
+  background-size: 50%;
+}
+
+.starfish {
+  background:url(images/one-starfish.png) fixed no-repeat;
+  background-position: right;
+  background-size: 50%;
+}
+
+.dead-spider {
+  background:url(images/dead-spider.png) fixed no-repeat;
+  background-position: left;
+  background-size: 50%;
+}
+
+.double-starfish {
+  background:url(images/double-starfish.png) fixed no-repeat;
+  background-position: right;
+  background-size: 50%;
+}
+
+.starbucks-hq {
+  background:url(images/starbucks-hq.png) fixed no-repeat;
+  background-position: left;
+  background-size: 50%;
+}
+
+.banana-coffee {
+  background:url(images/banana-coffee.png) fixed no-repeat;
+  background-position: right;
+  background-size: 50%;
+}
+
+.wikipedia {
+  background:url(images/wikipedia.png) fixed no-repeat;
+  background-position: left;
+  background-size: 50%;
+}
+
+.aa-bees {
+  background:url(images/aa-bees.png) fixed no-repeat;
+  background-position: right;
+  background-size: 50%;
+}
+
+.internet {
+  background:url(images/internet.png) fixed no-repeat;
+  background-position: left;
+  background-size: 50%;
+}
+
+.starfish-smile {
+  background:url(images/starfish-smile.png) fixed no-repeat;
+  background-position: right;
+  background-size: 50%;
+}
+
