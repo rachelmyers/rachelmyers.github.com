@@ -53,10 +53,14 @@ q{
   color: #F55D71;
 }
 
-.text-right { padding:3% 6% 3% 55%; }
-.text-left {
-  padding:3% 55% 3% 6%;
+.text-right {
+  padding: 3% 6% 3% 55%;
 }
+
+.text-left {
+  padding: 3% 55% 3% 6%;
+}
+
 .text-left, .text-right{
   border-bottom: 5px solid #555;
 }
@@ -100,7 +104,7 @@ q{
 }
 
 .fluent2014 {
-  background:url(images/squirrel.png) fixed no-repeat;
+  background:url(images/robot.png) fixed no-repeat;
   background-position:left;
 }
 
@@ -109,9 +113,19 @@ q{
   background-position:right;
 }
 
+.frontendops2014 {
+  background:url(images/robot.png) fixed no-repeat;
+  background-position:left;
+}
+
+.front-in-bh {
+  background:url(images/squirrel.png) fixed no-repeat;
+  background-position:right;
+}
+
 .railsbridge {
   background:url(images/ruby.png) fixed no-repeat;
-  background-position: right 200px center;
+  background-position: left 200px center;
 }
 
 footer {

@@ -93,24 +93,41 @@
       <div class="fluent2014">
         <div class="text-right">
           <h2>Fluent 2014</h2>
-          <p>I'm really excited that Emily and I will be returning to Fluent this year!</p>
-          <p>Our talk, <a href="http://fluentconf.com/fluent2014/public/schedule/detail/32518"><em>Everything is a Polyfill: Automate Deleting Code for Front End Performance</em></a> is scheduled for Wednesday, March 12, at 5:15pm. The conference is being held in San Francisco.</p>
-          <p>No word yet on what adorable animal drawings we'll use for the presentation. I'm hoping for squirrels.</p>
-          <p>More to come in this section as the talk approaches!</p>
+          <p>Most web developers have to support some old browsers. But the build the features we need, we often add snippets of code that adapt the functionality of older browsers; now we call these snippets polyfills. Polyfills are temporary; as our platforms evolve, we should pull out the polyfills when they become unnecessary. But we all know that usually doesn't happen.</p>
+          <p>This talk, <a href="http://fluentconf.com/fluent2014/public/schedule/detail/32518"><em>Everything is a Polyfill: Automate Deleting Code for Front End Performance</em></a> is a call to take polyfills seriously as a distinct layer in our app. As those develop, we propse using Sunset Tests, tests that mark temporary code and note its sunset date. The test failures occur automatically on sunset dates, and alert developers exactly what code can be removed. Sunset Tests are a way to efficiently mark code as expired, and make it easy to remove.</p>
+          <p>We're bullish on polyfills. Lots of people have done a great job of understanding the performance costs of large polyfils like jQuery, but for a large app, we'll always want to normalize and simplify our API, rather than scattering polyfills throughout our app.</p>
+          <p></p>
         </div>
       </div>
 
       <div class="codemania2014">
         <div class="text-left">
           <h2>Codemania 2014</h2>
-          <p>I'm very excited to visit <a href="http://codemania.co.nz/">Code Mania</a> and New Zealand for the first time in April!</p>
-          <p>The conference will be on the theme of mistakes we've made, so I have lots of material to choose from.</p>
-          <p>I owe the organizers a precis soon, and I'll update this section when the topic is nailed down.</p>
+          <p><a href="http://codemania.co.nz/">Improve Web Perf Without Breaking Metrics</a>, is the story of performance optimizations gone wrong. I was interested in why upgrading a large Rails app from Ruby 1.8.3 to 1.9, which was touted as a performance upgrade, ended up <em>increasing</em> response time. I ended up diving into the <a href="http://jamesgolick.com/2013/4/14/mris-method-caches.html">Ruby method cache</a>, to understand the things we were doing that prevented us from taking advantage of Ruby optimizations.
+          <p>But even after understanding the backend problems, we learned the <a href="http://www.stevesouders.com/blog/2012/02/10/the-performance-golden-rule/"> Performance Golden Rule </a> the hard way. (For the average website, 10% of the time spent waiting for the page to load is spent on the back end -- DNS, the handshake, hitting the database, and in server code. 90% is spent on the front end!) So when we worked to optimize server code, it didn't noticable improve the experience of users, and it didn't noticable impact business metrics like page views or conversion.</p>
+          <p>So we started taking user's perception of speed seriously. We created a backbone app for the tablet users with the goal of being able to carefully prioritize requests to have the fastest experience possible. Unfortunately, we were relying heavily on third party performance monitoring tools, all built around time to window load. When the time to window load stopped matching the user experience, we found ourselves flying blind.</p>
+          <p>We created a simple metrics </p>
+        </div>
+      </div>
+
+      <div class="frontendops2014">
+        <div class="text-right">
+          <h2>FrontEndOpsConf 2014</h2>
+          <p>At <a href="http://www.feopsconf.com/">FrontEndsOpsConf</a>, in San Francisco, Emily and I spoke about polyfills, building on the work we did for Fluent 2014.</p>
+        </div>
+      </div>
+
+      <div class="front-in-bh">
+        <div class="text-left">
+          <h2>Front in BH </h2>
+          <p>In July, Emily and I will speak at <a href="http://frontinbh.com.br/">Front In BH</a>, a Front End Conference in Belo Horizonte, Brazil!</p>
+          <p>Our talk will focus on coding habits and software patterns to create a performant and maintainable front end.</p>
+          <p>(Also, I'm super excited to see real capybaras!) </p>
         </div>
       </div>
 
       <div class="railsbridge">
-        <div class="text-left">
+        <div class="text-right">
           <a name="railsbridge"><h2>*RailsBridge</h2></a>
           <p><a href="http://www.railsbridge.org/">RailsBridge</a> is an organization that teaches women (and anyone else who can make the tech community more diverse) Ruby, Rails, and now HTML, CSS. (There's a <a href="https://github.com/railsbridge/docs/tree/js-tutorial">javascript curriculum</a> in the works if you'd like to contribute.)</p>
           <p>The RailBridge community and workshops were a huge help to me when I started programming, and I started teaching as soon as I was able.</p>
