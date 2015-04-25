@@ -14,7 +14,7 @@ a:hover {
 }
 
 h1, h2 {
-  font: 75px/70px 'Lobster', cursive;
+  font: 75px/77px 'Lobster', cursive;
   margin: 0;
   color: #555;
 }
@@ -26,11 +26,11 @@ h3 {
 }
 
 header {
-  height: 425px;
-  padding: 100px 0 200px 75px;
+  min-height: 200px;
+  padding: 100px 0 100px 75px;
   border-bottom: 5px solid #555;
   background: url(images/starmonkey.png) no-repeat;
-  background-position: bottom right;
+  background-position: bottom 50px right;
 }
 
 header h1 {
@@ -78,12 +78,13 @@ q{
 
 .src2013 {
   background:url(images/tree.png) fixed no-repeat;
-  background-position: right;
+  background-position: right 100px center;
 }
 
 .fluent2013 {
   background:url(images/yak.png) fixed no-repeat;
-  background-position: left 100px center;
+  background-position: left center;
+  background-size: 50%;
 }
 
 .fluent2013 h2, .fluent2013 a, .fluent2013 h3{
@@ -93,35 +94,48 @@ q{
   color: #F0A06E;
 }
 
+.soa .disaster {
+  color: #E83143;
+}
+
 
 .velocity2013 {
   background:url(images/buried-ostrich.png) fixed no-repeat;
-  background-position:right;
+  background-position: right;
 }
 
 .wicked2013 {
   background:url(images/dino.png) fixed no-repeat;
-  background-position:left;
+  background-position: left 200px center;
+  background-size: 40%
 }
 
 .railsgirls-milan {
   background:url(images/boot.png) fixed no-repeat;
-  background-position:right;
+  background-position: right 100px center;
+  background-size: 40%
 }
 
 .fluent2014 {
   background:url(images/robot.png) fixed no-repeat;
-  background-position:left;
+  background-position: left 200px center;
 }
 
 .codemania2014 {
-  background:url(images/starmonkey.png) fixed no-repeat;
-  background-position:right;
+  background:url(images/car.png) fixed no-repeat;
+  background-position: right 50px center;
+  background-size: 50%;
 }
 
 .frontendops2014 {
   background:url(images/robot.png) fixed no-repeat;
-  background-position:left;
+  background-position: left 200px center;
+}
+
+.soa {
+  background:url(images/robot-wires.png) fixed no-repeat;
+  background-position: left 50px center;
+  background-size: 50%;
 }
 
 .railsbridge {
