@@ -1,6 +1,6 @@
 body {
   background-color: #F3F3F3;
-  font: 20px/25px 'inconsolata' black;
+  font: 20px/25px 'inconsolata';
   margin: 0;
 }
 
@@ -16,6 +16,12 @@ a:hover {
 h1, h2 {
   font: 75px/70px 'Lobster', cursive;
   margin: 0;
+  color: #555;
+}
+
+
+h3 {
+  font: 20px/10px 'inconsolata';
   color: #555;
 }
 
@@ -80,7 +86,7 @@ q{
   background-position: left 100px center;
 }
 
-.fluent2013 h2, .fluent2013 a{
+.fluent2013 h2, .fluent2013 a, .fluent2013 h3{
   color: #DB6C27;
 }
  .fluent2013 p {
@@ -140,4 +146,3 @@ footer p{
   margin-top: 105px;
   margin-left: 250px;
 }
-
