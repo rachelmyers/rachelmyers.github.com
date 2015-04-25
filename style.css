@@ -84,7 +84,6 @@ q{
 .fluent2013 {
   background:url(images/yak.png) fixed no-repeat;
   background-position: left center;
-  background-size: 50%;
 }
 
 .fluent2013 h2, .fluent2013 a, .fluent2013 h3{
@@ -101,19 +100,17 @@ q{
 
 .velocity2013 {
   background:url(images/buried-ostrich.png) fixed no-repeat;
-  background-position: right;
+  background-position: right 100px center;
 }
 
 .wicked2013 {
   background:url(images/dino.png) fixed no-repeat;
-  background-position: left 200px center;
-  background-size: 40%
+  background-position: left 175px center;
 }
 
 .railsgirls-milan {
   background:url(images/boot.png) fixed no-repeat;
   background-position: right 100px center;
-  background-size: 40%
 }
 
 .fluent2014 {
@@ -124,7 +121,6 @@ q{
 .codemania2014 {
   background:url(images/car.png) fixed no-repeat;
   background-position: right 50px center;
-  background-size: 50%;
 }
 
 .frontendops2014 {
@@ -135,7 +131,6 @@ q{
 .soa {
   background:url(images/robot-wires.png) fixed no-repeat;
   background-position: left 50px center;
-  background-size: 50%;
 }
 
 .railsbridge {
