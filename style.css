@@ -124,14 +124,9 @@ q{
   background-position:left;
 }
 
-.front-in-bh {
-  background:url(images/squirrel.png) fixed no-repeat;
-  background-position:right;
-}
-
 .railsbridge {
   background:url(images/ruby.png) fixed no-repeat;
-  background-position: left 200px center;
+  background-position: right 200px center;
 }
 
 footer {
