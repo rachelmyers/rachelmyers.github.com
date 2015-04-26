@@ -14,7 +14,7 @@ a:hover {
 }
 
 h1, h2 {
-  font: 75px/77px 'Lobster', cursive;
+  font: 75px 'Lobster Two', cursive;
   margin: 0;
   color: #555;
 }
@@ -51,7 +51,7 @@ section {
 q{
   display: block;
   margin: 30px;
-  font: 30px/35px 'Lobster', cursive;
+  font: 30px/35px 'Architects Daughter', cursive;
   color: #555;
 }
 
