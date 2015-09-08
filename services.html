@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Services Considered Harmful</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="services.css">
 
@@ -153,23 +154,21 @@ end
       </div>
     </div> <!-- end of .dogs -->
 
-    <div class="starfish-smile"> <!-- gem-update-fail -->
+    <div class="gem-fail">
       <div class="text-left">
         <p>Unfortunately, that’s not how gems work. We could add assets and increment our gem version, but then we needed to coordinate updating the gem and redeploying that change across applications. So it was common that we were showing an inconsistent experience while we rushed to redeploy services. This implementation became a pain point because we forgot an important business requirement: that assets need to change at the same time to maintain a consistent user experience. We created problem of cache invalidation; we were caching assets in each app, and it was difficult to invalidate our cache quickly across the apps. But this solution would have worked if the boundaries around our services had been drawn better.</p>
-        <p>In much of the conversation around services and micro-services, the guiding principle seems to be "if anything about services is hard, break the service into smaller services, and then it will be easy." Again, that fails to take into account tradeoffs involved in building services; specifically, more services make it harder to make changes across the services uniformly. A better principle would be to draw lines for services around what will need to change at the same time. (This has roots in principles for more general complexity management, especially as articulated by Sandi Metz in Practical Object Oriented Design in Ruby.) By that principle, if we needed to build services, separating the front end of an app from an API would have avoided this problem.</p>
+        <p>In much of the conversation around services and micro-services, the guiding principle seems to be "if anything about services is hard, break the service into smaller services, and then it will be easy." Again, that fails to take into account tradeoffs involved in building services; specifically, more services make it harder to make changes across the services uniformly. <strong> A better principle would be to draw lines for services around what will need to change at the same time. </strong>(This has roots in principles for more general complexity management, especially as articulated by Sandi Metz in Practical Object Oriented Design in Ruby.) By that principle, if we needed to build services, separating the front end of an app from an API would have avoided this problem.</p>
       </div>
-    </div> <!-- end .gem-update-fail -->
+    </div> <!-- end .gem-fail -->
 
-    <div class="internet"> <!-- takeaways -->
+    <div class="take-aways">
       <div class="text-right">
-      <h2>Take Aways</h2>
-      <p>There are cases when services are the best solution, and a larger set of cases when services are not harmful. But creating services in a way that won't become a future liability requires a more careful conversation about the tradeoffs, about what you lose with services. These are the tradeoffs that I've seen:</p>
-      <ul>
-        <li>Service Oriented Architecture isn’t a mechanism for managing complexity, and further, SOA requires that a monolithic app be refactored to create isolated classes and behavior. Otherwise, services end up mirroring the badly factored original code. If you’re frustrated with your large, monolithic application, there are well-known ways to manage application complexity, and it's a better use of resources to invest in refactoring it into something you can work with. If you don't have good test coverage, Scientist can help you refactor safely.</li>
-        <li>The overhead of SOA may be justified if you need your code to run in multiple places or if part of the system has different uptime requirements. If there’s a part of your app (that’s not an identity service, that won’t create a second single point of failure for your product), building it as a service can isolate it. If a service is essential, remember you may be creating a bottleneck, and one that’s hard for lots of performance tools to measure.</li>
-        <li>Separate repositories don’t magically create clear ownership or good communication between teams. And bad communication between teams can become more debilitating if services limit visibility between dependent teams.</li>
-        <li>Design service boundaries around what will need to change together in the future.</li>
-      </ul>
+        <h2>Take Aways</h2>
+        <p>There are cases when services are the best solution, and a larger set of cases when services are not harmful. But creating services in a way that won't become a future liability requires a more careful conversation about the tradeoffs, about what you lose with services. These are the tradeoffs that I've seen:</p>
+        <p>Service Oriented Architecture isn’t a mechanism for managing complexity, and further, SOA requires that a monolithic app be refactored to create isolated classes and behavior. <strong>Otherwise, services end up mirroring the badly factored original code.</strong> If you’re frustrated with your large, monolithic application, there are well-known ways to manage application complexity, and it's a better use of resources to invest in refactoring it into something you can work with. If you don't have good test coverage, Scientist can help you refactor safely.<p>
+        <p>The overhead of SOA may be justified if you need your code to run in multiple places or if part of the system has different uptime requirements. If there’s a part of your app (that’s not an identity service, that won’t create a second single point of failure for your product), building it as a service can isolate it. If a service is essential, remember you may be creating a bottleneck, and one that’s hard for lots of performance tools to measure.</p>
+        <p>Separate repositories don’t magically create clear ownership or good communication between teams. And bad communication between teams can become more debilitating if services limit visibility between dependent teams.</p>
+        <p>Design service boundaries around what will need to change together in the future.</p>
       </div>
     </div> <!-- end of .takeaways -->
 
