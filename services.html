@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Services Considered Harmful</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="services.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="images/starfish.png">
+  </head>
+
+  <body>
+
+    <p><a href="/index.html">&laquo;Talks and Ideas</a></p>
+    <h1> Services Considered Harmful </h1>
+
+    <div class="boxes">
+      <div class="text-right">
+        <p>Most people are familiar with Service Oriented Architecture, but just in case, Service Oriented Architecture, or SOA for short, is a style of software architecture that builds and deploys distinct services in place of a single, monolithic application. The goals of building SOA vary; to generalize, the hope is that it's easier to maintain or scale small services than a large, monolithic application.</p>
+
+        <p>The promises of SOA have been largely not presented as a tradeoff, and SOA has been promoted by some as the cure all for the modern web app, solving everything from server performance problems to database performance problems, to badly factored code to problems of team dynamics. In practice, the benefits of services are more nuanced, and clear tradeoffs emerge in moving to to a Service Oriented Architecture. This post investigates three case studies that highlight common pitfalls of building Services. I hope this can contribute to a more nuanced conversation around what services can realistically provide.</p>
+      </div>
+    </div> <!-- end of .boxes -->
+
+    <div class="robot-wires">
+      <div class="text-left">
+        <h2> Case Study 1: Don't Extract Tangled Code </h2>
+        <p>The development team maintaining the legacy code for a medium-sized e-commerce site gets a feature request for a long-neglected part of the website, a place where the app had become much more tangled than other areas. It was a voting app for products to sell on the website.</p>
+        <p>The client-side code for this feature continually interspersed behavior, presentation and obscure browsers fixes (for browsers that were perhaps no longer supported?), and it had reached the point that the team considered it "unrefactorable". The feature this code was supporting was a fairly simple voting app. But the code was dauntingly complex because it had no structure and no comments to hint at intention.</p>
+        <p>The server side code for the feature had a different problem. The Hats that could be voted on, which were not yet products to buy on the main part of the website, were the same class as the Hats you could actually buy, even though the behavior of the two objects was entirely different. More confusing, if a particular hat won the round of voting, and became a product users could buy, we created two records in the same class, and they had an association with each other</p>
+      </div>
+    </div> <!-- end of .robot-wires -->
+
+    <div class="fire">
+      <div class="text-right">
+<pre class="comments">
+# This class encapsulates behavior for hats
+# that are actually for sale as well as hat
+# samples we might sell.
+</pre>
+<pre>
+class Hat
+  belongs_to :votable_hat, class_name: :Hat
+</pre>
+<pre class="comments">
+  # Public: Adds a Hat to a Cart
+  #   cart - the `Cart` to which the Hat should be added
+  # Returns the Hat object.
+</pre>
+<pre>
+  def add_to(cart)
+    &hellip;
+  end
+</pre>
+<pre class="comments">
+  # Public: Vote for a sample Hat
+  #   user - the `User` voting for this hat
+  # Returns a Hat object.
+</pre>
+<pre>
+  def vote_yes(user)
+    &hellip;
+  end
+end
+</pre>
+        <p>It was a pretty confusing data model to start with. And it's worth noting that it violates the Single Responsibility Principle; this class was responsible for two different types of behavior. In retrospect, we would have refactored this class into different classes, each defining only one set of behavior.</p>
+        <p>Instead, we thought we could refactor as we rewrote the feature as a service. So we didn’t bother to refactor the model in place.</p>
+        <p>So we wanted to make a small improvement to the feature, and we saw this as an opportunity to refactor the unmanaged complexity of the existing code. Specifically, we wanted to separate the behavior of what I'll call BuyableHats and VotableHats. And we wanted to rewrite the javascript to be easier to read and change in the future. We thought we could see some clear lines around what could potentially be extracted. It would be an app made up only of VotableHats and Votes. The BuyableHats would stay in the main, existing app</p>
+        <p>It's worth noting here that were bought into the idea that SOA meant creating small, well-defined, and easy-to-maintain services. We didn't understand the tradeoffs or potential pitfalls we might encounter. So we ran `rails new`, and defined the data model we had always wanted for this feature.</p>
+        <p>At first the rewrite was glorious and fast moving. We knew the existing feature well enough that we didn't have to struggle with business requirements, and we had enough experience with the existing data model that we knew patterns that we definitely wanted to avoid.</p>
+      </div>
+    </div> <!-- end of .fire -->
+
+    <div class="votes1">
+      <div class="text-left">
+        <p>We hit our first speed bump when we started planning to import the old VotableHat records (which were really `Hat` records) into our new VotableHats application. The migration script that imported the VotableHats and some of its associations into our new application was the first place that we encountered the leaky logic for the `Hat` model. The logic that determined the customer-facing state of a VotableHat was spread across the app. And migrating the data in a way that would maintain the state in the new app meant lots of small hits to our velocity while we spent time understanding hidden corners of our application.</p>
+        <p>Eventually, we realized that VotableHats had more dependencies on the Buyable Hats than we had initially thought; we hadn’t refactored the Hat model enough to understand the dependencies. We didn't want to give up on building out a new service, though.</p>
+      </div>
+    </div> <!-- end of .votes1 -->
+
+    <div class="votes2">
+      <div class="text-right">
+        <p>Then we did one bad thing. We connected the new service to the existing database, to avoid duplicating the associations, for example, information about the users associated with votes.</p>
+        <p>That should have been a warning sign. Then we realized that the main app would still need some attributes about VotableHats. We couldn’t wait for the API to be built, so, the main app connected to the VotableApps database.</p>
+      </div>
+    </div> <!-- end of .votes2 -->
+
+    <div class="votes3">
+      <div class="text-left">
+        <p>That was a warning sign. Then we realized that the main app would still need some attributes about VotableHats. We couldn’t wait for the API to be built, so, the main app connected to the VotableApps database.</p>
+        <p>And we should pause here to appreciate that this is the diagram of doom. This diagram means that we didn't understand the code we were extracting well enough to actually extract it. We drew the lines around our new service so poorly, that we aren’t actually extracting an independent service; we're creating an ecosystem of services that mirrors the poorly factored code in our original app.</p>
+        <p>Realizing that there was so much complexity in the Hat Model and its associations, and fearing the time it would take to understand and refactor that complexity, we packaged the Hat model and several associated models as a gem. We included the gem in our new Vote On Hats application.<p>
+        <p><strong>This is a huge danger that isn't often discussed in conversations about Services: Creating classes with well-defined responsibilities and boundaries is a necessary precondition to building services. Services are not an alternative to managing code complexity. Teams that are attracted to rewriting gnarled code into services *as a way to avoid understanding and refactoring the existing app* are doomed to failure.</strong></p>
+      </div>
+    </div> <!-- end of .votes3 -->
+
+    <div class="clouds">
+      <div class="text-right">
+        <p>In our case, the Hat Model was a problem. Given the chance to try again, I'd have tried to solved that problem directly, by refactoring it to isolate its dependencies. To think about how this problem would be approached at GitHub, GitHub.com is a giant, monolithic app, and there are corners that are neglected, poorly understood, and poorly tested. That makes refactoring risky, but also essential. To help with refactors and rewrites like that, GitHub maintains an open source project called <a href="https://github.com/github/scientist">Scientist</a>. Scientist lets you define an old and a new code path. In production, Scientist runs both the old and new code paths and reports back when the code paths agree and disagree. The user sees the result of the old code path until you flip the switch, so this is a way to dark ship your code and test your rewrite with real users.</p>
+        <p>Jesse Toth's, <a href="https://www.youtube.com/watch?v=kgDqUHWVw4A">talk</a> about how she used Scientist to rewrite the permissions code of GitHub is a great example. In her case, the code that was not fully understood by anyone in the org and wasn't fully tested. In other words, it was the worst possible code to rewrite. She investigated all the corner cases, in which the new and old code paths disagreed. When the new permissions shipped, they were tested, reliable, and well factored. It was an impressive rewrite, because this is the sort of thing that is usually impossible to do well.</p>
+      </div>
+    </div> <!-- end of .clouds -->
+
+    <div class="identity">
+      <div class="text-left">
+        <h2>Case Study #2: An Identity Service</h2>
+        <p>Around the time the Vote on Hats app was failing, we were contemplating other services, and thought a service to manage authentication and authorization for all applications would be an important part of that. It was enticing because the complexity of our monolithic application was particularly concentrated in our Hat model (our God model), and our User model; we hoped that pulling the Identity Service into a separate app would help us isolate the complexity of the User model.</p>
+        <p>We were also beginning to have two related problems: first, teams focused on different project and with different schedules had trouble collaborating. For example, a team that consumed the API, and relied on API enhancements, would occasionally merge API changes for themselves without waiting for the API team to sign off. I was occasionally one of the offenders; when our stakeholders were worried about our project stalling while we waited on the API team, it was easier to ask forgivness than get our enhancements prioritized on the API team.<p>
+        <p>Secondly, we were seeing more and more of what we started calling a "swoop and poop": someone would fly in, criticize code they were neither familiar with nor responsible for, and fly out before they had to help with a better solution. This was especially problematic for the team maintaining the User model. So extracting that code into a separate repository seemed like it would give us both the complexity management and organizational separation that we needed.</p>
+      </div>
+    </div> <!-- end of .identity -->
+
+    <div class="identity1">
+      <div class="text-right">
+        <p>That was our motivation, this was our tactic: We knew that we didn’t want to end up with the closely coupled services like we built for Vote On Hats app. First, We didn’t give the identity service a database of its own; we pointed it at the main database.  </p>
+        <p>When a request came in, it would go through the main application, which would call the identity api, which would query the database of the main application, and then return a response to the main application. That was a little circuitous, but it’s not terrible.</p>
+        <p>Around the same time, we added an iOS app, which needed to authenticate users just like the main, web application. A reasonable thing to expect would have been for the mobile app to authenticate against the identity service, which would query the main database, and returns a response to the mobile app.</p>
+        <p>But, again, `User` objects were modified in many places across the main application. We were never able to fully extracted all the User behavior into the Identity Service. As a result, the Identity Service needed to call back to the Main application for every authentication or authorization call, including those from the mobile app.</p>
+      </div>
+    </div> <!-- end of .identity1 -->
+
+    <div class="failure">
+      <div class="text-left">
+        <p>This is still a failure. We  did extract the identity service, but it couldn’t do anything on its own. This is a much more dangerous failure than the previous example app. First, this brought non-trivial operational complexity. More seriously, the identity service wasn’t capable of functioning without the main application, and the main application wasn’t capable of functioning without the identity service. Both applications needed to be up all the time for the site to be usable; instead of one single point of failure, we now had two.</p>
+        <p>Worse still, the Identity Service didn’t relieve the load of the main app in a meaningful way. It's common to hear SOA touted as a reduce app load, and in so doing, to help scale applications. But SOA and scaling is more subtle. Starting out, we naively believed that anything that reduced load on the main application would improve overall scalability. Say we started with 1000 workers, to make the numbers easy. We thought that authentication requests would be about 1% of requests, but to make sure it wasn't a bottleneck, we decided to add 100 workers to handle authentication requests. And we thought that would be an improvement.</p>
+      </div>
+    </div> <!-- end of .failure -->
+
+    <div class="boxes">
+      <div class="text-right">
+      <p>But thinking about this in terms of queueing theory can help explain why the identity service could hurt our scale-ability and response times, even with the extra capacity. Most requests can be served from the large pool of workers, but a certain set of requests are going into the smaller pool, probably with fewer workers. If queuing theory is new, it's like going to the DMV (in the US), or an inefficient coffee shop: I have to stand in a line to order coffee, when I get though there, get in another line to pay for coffee, and when I get through that line, get in a separate line to pick up my coffee. With a monolith, I stand in one line.</p>
+      <p>And standing in all those lines takes extra time. Making the multi-line coffeeshop as fast as a coffeeshop with a single line is possible, but it might require hiring several people to take orders and several people to make coffee. And that's what it's like the scale with services. Instead of scaling up workers that can handle any request, we need to to scale each service independently. In the case of the identity service, for the same amount of resources, we can can get a faster average response if each request can be served by any available worker. To be clear, this is because we were fetching user information on every request. This calculation would changes for services that were used less frequently or that could timeout without devastating the user experience.</p>
+      </div>
+    </div> <!-- end of .boxes -->
+
+    <div class="responsibility">
+      <div class="text-left">
+        <p>The other goal of the Identity Service was to define clear team responsibilities by creating separate repositories. Creating a separate repository for the Identity Service did prevent people from making changes there, but they continued to make changes that affected the User model in the main application. It didn't solve the core problem of teams not respecting areas of responsibility. At GitHub we have a relatively low-tech solution: We define team responsibilities in every controller.</p>
+        <p>That team responsibility is used by our issue tracker, so if exceptions occur in my area of responsibility, I'm set up to see those. There's also the expectation that if I open a PR on a part of the app I'm not responsible for, someone from that area should signoff before I merge my changes.</p>
+        <p>And although there's a code component to this solution, it's primiarily a process solution. And this that's the best answer. If organizational and process problems are pushing a team toward services, the best fix is to understand and address the process problem directly.</p>
+      </div>
+    </div> <!-- end of .responsibility -->
+
+    <div class="dogs">
+      <div class="text-right">
+      <h2>Case Study #3: Shared Assets</h2>
+      <q>Create Services Around What Changes Together</q>
+      <p>The final case study of a failure of Service Oriented Architecture is was meant to solve a common pain point for teams building out SOA, how to share assets, HTML, images, CSS, and JavaScript, across applications. It wasn’t destined to be a disaster, but the implementation made it a disaster.</p>
+      <p>With a monolith, you generally only needed one set of assets, and all the assets are accessible from anywhere in the application. But if you build services that are customer-facing, that generate HTML (as opposed to services that only support an API), you'll run into cases of wanting to repeat assets across applications (like the site logo, foundational CSS, and foundational javascript).</p>
+      <p>As we started building out services, we needed assets in a few places and we needed something better than manually repeating them in each new application. That was the main design constraint we were thinking about, and a gem containing all our assets would be an efficient solution. We had various user-facing applications that each needed assets, and it’s relatively easy to package a gem, include it in different apps, and reference those assets in the code.</p>
+      <p>The problem came when we needed to update the assets. Imagine an especially visible asset change, for instance, changing the logo or main navigation. Those sorts of changes were especially bad because the lines around out services weren't drawn around things that changed together. The homepage was served by one service, the page with hat details was served by a different service, and the page where you log in is a different service. So in the case of asset changes, it was important to change the assets everywhere.</p>
+      </div>
+    </div> <!-- end of .dogs -->
+
+    <div class="starfish-smile"> <!-- gem-update-fail -->
+      <div class="text-left">
+        <p>Unfortunately, that’s not how gems work. We could add assets and increment our gem version, but then we needed to coordinate updating the gem and redeploying that change across applications. So it was common that we were showing an inconsistent experience while we rushed to redeploy services. This implementation became a pain point because we forgot an important business requirement: that assets need to change at the same time to maintain a consistent user experience. We created problem of cache invalidation; we were caching assets in each app, and it was difficult to invalidate our cache quickly across the apps. But this solution would have worked if the boundaries around our services had been drawn better.</p>
+        <p>In much of the conversation around services and micro-services, the guiding principle seems to be "if anything about services is hard, break the service into smaller services, and then it will be easy." Again, that fails to take into account tradeoffs involved in building services; specifically, more services make it harder to make changes across the services uniformly. A better principle would be to draw lines for services around what will need to change at the same time. (This has roots in principles for more general complexity management, especially as articulated by Sandi Metz in Practical Object Oriented Design in Ruby.) By that principle, if we needed to build services, separating the front end of an app from an API would have avoided this problem.</p>
+      </div>
+    </div> <!-- end .gem-update-fail -->
+
+    <div class="internet"> <!-- takeaways -->
+      <div class="text-right">
+      <h2>Take Aways</h2>
+      <p>There are cases when services are the best solution, and a larger set of cases when services are not harmful. But creating services in a way that won't become a future liability requires a more careful conversation about the tradeoffs, about what you lose with services. These are the tradeoffs that I've seen:</p>
+      <ul>
+        <li>Service Oriented Architecture isn’t a mechanism for managing complexity, and further, SOA requires that a monolithic app be refactored to create isolated classes and behavior. Otherwise, services end up mirroring the badly factored original code. If you’re frustrated with your large, monolithic application, there are well-known ways to manage application complexity, and it's a better use of resources to invest in refactoring it into something you can work with. If you don't have good test coverage, Scientist can help you refactor safely.</li>
+        <li>The overhead of SOA may be justified if you need your code to run in multiple places or if part of the system has different uptime requirements. If there’s a part of your app (that’s not an identity service, that won’t create a second single point of failure for your product), building it as a service can isolate it. If a service is essential, remember you may be creating a bottleneck, and one that’s hard for lots of performance tools to measure.</li>
+        <li>Separate repositories don’t magically create clear ownership or good communication between teams. And bad communication between teams can become more debilitating if services limit visibility between dependent teams.</li>
+        <li>Design service boundaries around what will need to change together in the future.</li>
+      </ul>
+      </div>
+    </div> <!-- end of .takeaways -->
+
+    <footer>
+      Thanks to <a href="">Emily Nakashima</a> and <a href="">Jesse Toth</a> for great feedback about this talk.
+    </footer>
+
+  </body>
+</html>

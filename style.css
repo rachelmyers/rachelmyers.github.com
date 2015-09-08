@@ -13,8 +13,8 @@ a:hover {
   color: #777;
 }
 
-h1, h2 {
-  font: 75px 'Lobster Two', cursive;
+h1, h2, h3 {
+  font: 75px 'Lobster Two', 'inconsolata';
   margin: 0;
   color: #555;
 }
@@ -51,7 +51,7 @@ section {
 q{
   display: block;
   margin: 30px;
-  font: 30px/35px 'Architects Daughter', cursive;
+  font: 30px/35px 'Lobster Two', cursive;
   color: #555;
 }
 

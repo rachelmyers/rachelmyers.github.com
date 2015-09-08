@@ -1,0 +1,75 @@
+h1{
+  font: 'Lobster Two';
+  padding: 30px 0 0 50px;
+}
+
+pre {
+  color: red;
+}
+pre.comments{
+  color: gray;
+}
+
+.text-left, .text-right{
+  border: none;
+}
+
+.boxes {
+  background:url(images/boxes.png) fixed no-repeat;
+  background-position: left 100px top 250px;
+}
+
+.robot-wires {
+  background:url(images/robot-wires.png) fixed no-repeat;
+  background-position: right 50px center;
+}
+
+.fire {
+  background:url(images/fire.png) fixed no-repeat;
+  background-position: left 50px center;
+}
+
+.votes1 {
+  background:url(images/votes1.png) fixed no-repeat;
+  background-position: right 50px center;
+}
+
+.votes2 {
+  background:url(images/votes2.png) fixed no-repeat;
+  background-position: left 50px center;
+}
+
+.votes3 {
+  background:url(images/votes3.png) fixed no-repeat;
+  background-position: right 50px center;
+}
+
+.clouds {
+  background:url(images/clouds.png) fixed no-repeat;
+  background-position: left 50px center;
+}
+
+.identity {
+  background:url(images/identity.png) fixed no-repeat;
+  background-position: right 200px center;
+}
+
+.identity1 {
+  background:url(images/identity1.png) fixed no-repeat;
+  background-position: left;
+}
+
+.failure {
+  background:url(images/failure.png) fixed no-repeat;
+  background-position: right 50px center;
+}
+
+.responsibility {
+  background:url(images/responsibility.png) fixed no-repeat;
+  background-position: right 50px center;
+}
+
+.dogs {
+  background:url(images/dogs.png) fixed no-repeat;
+  background-position: left 50px center;
+}
