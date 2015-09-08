@@ -84,12 +84,12 @@ end
       <div class="text-right">
         <p>Then we did one bad thing. We connected the new service to the existing database, to avoid duplicating the associations, for example, information about the users associated with votes.</p>
         <p>That should have been a warning sign. Then we realized that the main app would still need some attributes about VotableHats. We couldn’t wait for the API to be built, so, the main app connected to the VotableApps database.</p>
+        <p>That was a warning sign. Then we realized that the main app would still need some attributes about VotableHats. We couldn’t wait for the API to be built, so, the main app connected to the VotableApps database.</p>
       </div>
     </div> <!-- end of .votes2 -->
 
     <div class="votes3">
       <div class="text-left">
-        <p>That was a warning sign. Then we realized that the main app would still need some attributes about VotableHats. We couldn’t wait for the API to be built, so, the main app connected to the VotableApps database.</p>
         <p>And we should pause here to appreciate that this is the diagram of doom. This diagram means that we didn't understand the code we were extracting well enough to actually extract it. We drew the lines around our new service so poorly, that we aren’t actually extracting an independent service; we're creating an ecosystem of services that mirrors the poorly factored code in our original app.</p>
         <p>Realizing that there was so much complexity in the Hat Model and its associations, and fearing the time it would take to understand and refactor that complexity, we packaged the Hat model and several associated models as a gem. We included the gem in our new Vote On Hats application.<p>
         <p><strong>This is a huge danger that isn't often discussed in conversations about Services: Creating classes with well-defined responsibilities and boundaries is a necessary precondition to building services. Services are not an alternative to managing code complexity. Teams that are attracted to rewriting gnarled code into services *as a way to avoid understanding and refactoring the existing app* are doomed to failure.</strong></p>
