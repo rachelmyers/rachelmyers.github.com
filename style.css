@@ -1,5 +1,5 @@
 body {
-  background-color: #F3F3F3;
+  background-color: #EFEFEF;
   font: 20px/25px 'inconsolata';
   margin: 0;
 }
@@ -13,24 +13,9 @@ a:hover {
   color: #777;
 }
 
-h1, h2, h3 {
-  font: 75px 'Lobster Two', 'inconsolata';
-  margin: 0;
-  color: #555;
-}
-
-
-h3 {
-  font: 20px/10px 'inconsolata';
-  color: #555;
-}
-
 header {
   min-height: 300px;
-  padding: 100px 0 100px 75px;
-  border-bottom: 5px solid #555;
-  background: url(images/starmonkey.png) no-repeat;
-  background-position: bottom 50px right;
+  padding: 50px 0 100px 75px;
 }
 
 header ul li {
@@ -43,110 +28,16 @@ header h1 {
   margin: 0;
 }
 
-section {
-  margin: 20px 0 0 60px;
-  width: 600px;
+/* Sticker images */
+
+.rachelmyers-sticker {
+  width: 90%;
 }
 
-q{
-  display: block;
-  margin: 30px;
-  font: 30px/35px 'Lobster Two', cursive;
-  color: #555;
+.link-sticker {
+  width: 55%
 }
 
-.extra-special{
-  color: #F55D71;
-}
-
-.text-right {
-  padding: 3% 6% 3% 55%;
-}
-
-.text-left {
-  padding: 3% 55% 3% 6%;
-}
-
-.text-left, .text-right{
-  border-bottom: 5px solid #555;
-}
-
-.passion-projects {
-  background:url(images/starfish.png) fixed no-repeat;
-  background-position: left;
-}
-
-.src2013 {
-  background:url(images/tree.png) fixed no-repeat;
-  background-position: right 100px center;
-}
-
-.fluent2013 {
-  background:url(images/yak.png) fixed no-repeat;
-  background-position: left center;
-}
-
-.fluent2013 h2, .fluent2013 a, .fluent2013 h3{
-  color: #DB6C27;
-}
- .fluent2013 p {
-  color: #F0A06E;
-}
-
-.soa .disaster {
-  color: #E83143;
-}
-
-
-.velocity2013 {
-  background:url(images/buried-ostrich.png) fixed no-repeat;
-  background-position: right 100px center;
-}
-
-.wicked2013 {
-  background:url(images/dino.png) fixed no-repeat;
-  background-position: left 175px center;
-}
-
-.railsgirls-milan {
-  background:url(images/boot.png) fixed no-repeat;
-  background-position: right 100px center;
-}
-
-.fluent2014 {
-  background:url(images/robot.png) fixed no-repeat;
-  background-position: left 200px center;
-}
-
-.codemania2014 {
-  background:url(images/car.png) fixed no-repeat;
-  background-position: right 50px center;
-}
-
-.frontendops2014 {
-  background:url(images/robot.png) fixed no-repeat;
-  background-position: left 200px center;
-}
-
-.soa {
-  background:url(images/robot-wires.png) fixed no-repeat;
-  background-position: left 50px center;
-}
-
-.railsbridge {
-  background:url(images/ruby.png) fixed no-repeat;
-  background-position: right 200px center;
-}
-
-footer {
-  max-width: 500px;
-  margin: 40px auto 0 auto;
-  height: 145px;
-  background: url(images/banana.png) no-repeat;
-}
-
-footer p{
-  position: absolute;
-  margin-top: 105px;
-  margin-left: 250px;
+.footer-sticker {
+  width: 100%
 }
